@@ -24,7 +24,7 @@ python3.pkgs.buildPythonApplication rec {
     homepage = https://github.com/LazoCoder/Pokemon-Terminal;
     changelog = "https://github.com/LazoCoder/Pokemon-Terminal/releases";
     license = licenses.gpl3;
-    platforms = platforms.x86_64-linux;
+    platforms = platforms.linux;
     mainProgram = "pokemon";
   };
 }

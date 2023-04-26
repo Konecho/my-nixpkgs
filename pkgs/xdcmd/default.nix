@@ -65,7 +65,7 @@ python3.pkgs.buildPythonPackage rec {
     homepage = https://nmbxd.com/t/50750950;
     changelog = "https://git.savannah.gnu.org/cgit/hello.git/plain/NEWS?h=v${version}";
     license = licenses.agpl3;
-    platforms = platforms.x86_64-linux;
+    platforms = platforms.linux;
     mainProgram = "xdcmd";
   };
 }
