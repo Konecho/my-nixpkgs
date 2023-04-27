@@ -63,9 +63,8 @@ python3.pkgs.buildPythonPackage rec {
   meta = with lib; {
     description = "X 岛匿名版命令行客户端";
     homepage = https://nmbxd.com/t/50750950;
-    changelog = "https://git.savannah.gnu.org/cgit/hello.git/plain/NEWS?h=v${version}";
     license = licenses.agpl3;
-    platforms = platforms.linux;
+    platforms = platforms.all;
     mainProgram = "xdcmd";
   };
 }
