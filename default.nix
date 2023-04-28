@@ -16,4 +16,5 @@
 
   xdcmd = pkgs.callPackage ./pkgs/xdcmd { };
   pokemon-terminal = pkgs.callPackage ./pkgs/pokemon-terminal { };
+  ehentai-archive-info = pkgs.callPackage ./pkgs/ehentai-archive-info { };
 }
