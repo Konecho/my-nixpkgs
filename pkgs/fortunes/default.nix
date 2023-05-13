@@ -19,9 +19,7 @@ stdenv.mkDerivation rec {
 
   binName = "fortune-cn";
 
-  # 目前只有<fortune-cn chinese>和<fortune-cn diet>能正常使用，不知道为什么
-
-  buildPhase = ''
+  installPhase = ''
     mkdir -p $out/bin
     echo "#!/bin/bash" >> $out/bin/${binName} 
     echo "${fortune}/bin/fortune \$(echo \$@ | sed 's~\\b\\(fortunes\\|chinese\\|tang300\\|song100\\|diet\\)\\b~@out@/share/games/fortunes/\\1~g')">>$out/bin/${binName}
@@ -29,7 +27,12 @@ stdenv.mkDerivation rec {
     substituteAllInPlace $out/bin/${binName}
   '';
 
-  installPhase = ''
+  buildPhase = ''
+    strfile data/fortunes
+    strfile data/chinese
+    strfile data/tang300
+    strfile data/song100
+    strfile data/diet
     mkdir -p $out/share/games/fortunes
     cp data/* $out/share/games/fortunes
   '';
