@@ -16,6 +16,6 @@ rec{
   version = "unstable-2023-03-18";
   pname = "scutfonts";
   installPhase = ''
-    find . -name '*.ttf'    -exec install -Dt $out/share/fonts/truetype {} \;
+    find . -name '*.ttf' -name '*.ttc'   -exec install -Dt $out/share/fonts/truetype {} \;
   '';
 }
