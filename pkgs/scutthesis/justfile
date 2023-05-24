@@ -1,0 +1,34 @@
+#!/usr/bin/env just --justfile
+XE_PARAMS := "-c-style-errors -interaction=nonstopmode -file-line-error -synctex=1"
+
+test:
+    textlive/xelatex -v
+    textlive/biber -v
+run:make open
+help:
+    # install font first
+    just -l
+fast-cover:
+    cd {{invocation_directory()}}; sed -i '1s/master,pdfcover]/master]/g' scutthesis.tex
+cover:
+    cd {{invocation_directory()}}; sed -i '1s/master]/master,pdfcover]/g' scutthesis.tex
+open:
+    cd {{invocation_directory()}}; xdg-open scutthesis.pdf
+dot:
+    cd fig && dot -O -Tpdf *.dot
+pdf: rmpdf
+    cd {{invocation_directory()}}; textlive/xelatex {{XE_PARAMS}} scutthesis 
+bib:
+    cd {{invocation_directory()}}; textlive/biber scutthesis
+    just xe
+# uml:
+#     cd fig
+xe:
+    cd {{invocation_directory()}}; textlive/xelatex -no-pdf {{XE_PARAMS}} scutthesis
+clean:
+    -cd {{invocation_directory()}}; rm *.aux *.lo? *.toc *.ind *.inx *.gls *.glo *.ist *.idx *.ilg *.out *.bak *.bbl *.brf *.blg *.dvi *.ps *.xdv *.run.xml *.synctex.gz *.hd *.bcf
+rmpdf:
+    -cd {{invocation_directory()}}; rm scutthesis.pdf
+make: clean rmpdf xe bib
+    just pdf
+    # just clean

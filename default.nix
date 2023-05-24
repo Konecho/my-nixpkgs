@@ -21,4 +21,5 @@
   fortunes = pkgs.callPackage ./pkgs/fortunes { };
   shox = pkgs.callPackage ./pkgs/shox { };
   labelme = pkgs.callPackage ./pkgs/labelme { };
+  scutthesis = pkgs.callPackage ./pkgs/scutthesis { };
 }
