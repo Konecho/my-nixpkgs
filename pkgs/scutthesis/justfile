@@ -1,34 +1,36 @@
 #!/usr/bin/env just --justfile
 XE_PARAMS := "-c-style-errors -interaction=nonstopmode -file-line-error -synctex=1"
 
-test:
+test: && help
     textlive/xelatex -v
     textlive/biber -v
-run:make open
 help:
-    # install font first
+    ## make sure to install font first
     just -l
+run:make open
+[no-cd]
 fast-cover:
-    cd {{invocation_directory()}}; sed -i '1s/master,pdfcover]/master]/g' scutthesis.tex
+    sed -i '1s/master,pdfcover]/master]/g' scutthesis.tex
+[no-cd]
 cover:
-    cd {{invocation_directory()}}; sed -i '1s/master]/master,pdfcover]/g' scutthesis.tex
+    sed -i '1s/master]/master,pdfcover]/g' scutthesis.tex
+[no-cd]
 open:
-    cd {{invocation_directory()}}; xdg-open scutthesis.pdf
-dot:
-    cd fig && dot -O -Tpdf *.dot
+    xdg-open scutthesis.pdf
+[no-cd]
 pdf: rmpdf
-    cd {{invocation_directory()}}; textlive/xelatex {{XE_PARAMS}} scutthesis 
+    textlive/xelatex {{XE_PARAMS}} scutthesis 
+[no-cd]
 bib:
-    cd {{invocation_directory()}}; textlive/biber scutthesis
-    just xe
-# uml:
-#     cd fig
+    textlive/biber scutthesis
+[no-cd]
 xe:
-    cd {{invocation_directory()}}; textlive/xelatex -no-pdf {{XE_PARAMS}} scutthesis
+    textlive/xelatex -no-pdf {{XE_PARAMS}} scutthesis
+[no-cd]
 clean:
-    -cd {{invocation_directory()}}; rm *.aux *.lo? *.toc *.ind *.inx *.gls *.glo *.ist *.idx *.ilg *.out *.bak *.bbl *.brf *.blg *.dvi *.ps *.xdv *.run.xml *.synctex.gz *.hd *.bcf
+    -rm *.aux *.lo? *.toc *.ind *.inx *.gls *.glo *.ist *.idx *.ilg *.out *.bak *.bbl *.brf *.blg *.dvi *.ps *.xdv *.run.xml *.synctex.gz *.hd *.bcf
+[no-cd]
 rmpdf:
-    -cd {{invocation_directory()}}; rm scutthesis.pdf
-make: clean rmpdf xe bib
-    just pdf
-    # just clean
+    -rm scutthesis.pdf
+make: clean rmpdf xe bib xe pdf
+    ## run scut clean

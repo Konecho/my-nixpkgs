@@ -30,16 +30,27 @@ rec {
 
   installPhase = ''
     mkdir -p $out/bin
-    cat ${./justfile}  >> $out/bin/${binName} 
-    chmod +x $out/bin/${binName}
-    substituteAllInPlace $out/bin/${binName}
-    substituteInPlace $out/bin/${binName} --replace textlive  ${tex}/bin
+    cat ${./justfile}  >> $out/bin/justfile
+
+    chmod +x $out/bin/justfile
+    substituteAllInPlace $out/bin/justfile
+    substituteInPlace $out/bin/justfile --replace textlive  ${tex}/bin
+
+    ln -s $out/bin/justfile $out/bin/${binName}
+
+    mkdir -p $out/share
+    cp *.tex $out/share
+    cp *.bib $out/share
+    cp *.sty $out/share
+    cp *.cls $out/share
+    cp -r Fig $out/share
   '';
 
-  meta = with lib; {
-    description = "华南理工大学硕博士学位论文LaTeX模板。Latex templates for the thesis of South China University of Technology";
-    homepage = "https://github.com/mengchaoheng/SCUT_thesis";
-    license = licenses.gpl3Only;
-    maintainers = with maintainers; [ ];
-  };
+  meta = with lib;
+    {
+      description = "华南理工大学硕博士学位论文LaTeX模板。Latex templates for the thesis of South China University of Technology";
+      homepage = "https://github.com/mengchaoheng/SCUT_thesis";
+      license = licenses.gpl3Only;
+      maintainers = with maintainers; [ ];
+    };
 }
