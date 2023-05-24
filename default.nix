@@ -20,4 +20,5 @@
   tuigreet = pkgs.callPackage ./pkgs/tuigreet { };
   fortunes = pkgs.callPackage ./pkgs/fortunes { };
   shox = pkgs.callPackage ./pkgs/shox { };
+  labelme = pkgs.callPackage ./pkgs/labelme { };
 }
