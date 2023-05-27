@@ -5,8 +5,8 @@
 , texlive
 }:
 
-stdenv.mkDerivation
-rec{
+let mkFonts = { pname, subDir }: stdenv.mkDerivation rec{
+  inherit pname;
   src = fetchFromGitHub {
     owner = "mengchaoheng";
     repo = "SCUT_thesis";
@@ -14,9 +14,14 @@ rec{
     hash = "sha256-GXZ/jaq8aSUAhn+p0yfs9wiCVq13Bx+GMJZvIVrc070=";
   };
   version = "unstable-2023-03-18";
-  pname = "scutfonts";
   installPhase = ''
-    find . -name '*.ttf'    -exec install -Dt $out/share/fonts/truetype {} \;
-    find . -name '*.ttc'    -exec install -Dt $out/share/fonts/truetype {} \;
+    find ${subDir} -name '*.ttf'    -exec install -Dt $out/share/fonts/truetype {} \;
+    find ${subDir} -name '*.ttc'    -exec install -Dt $out/share/fonts/truetype {} \;
   '';
+};
+in
+{
+  windows = mkFonts { pname = "scutfonts-win"; subDir = "./settings_files/Win"; };
+  macos = mkFonts { pname = "scutfonts-mac"; subDir = "./settings_files/MacOS"; };
+  linux = mkFonts { pname = "scutfonts-linux"; subDir = "./settings_files/Linux"; };
 }
