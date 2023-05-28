@@ -15,8 +15,7 @@ let
   # });
   tex = texlive.combined.scheme-full;
 in
-stdenv.mkDerivation
-rec {
+stdenv.mkDerivation rec {
   pname = "scutthesis";
   src = fetchFromGitHub {
     owner = "mengchaoheng";
@@ -25,7 +24,7 @@ rec {
     hash = "sha256-GXZ/jaq8aSUAhn+p0yfs9wiCVq13Bx+GMJZvIVrc070=";
   };
   version = "unstable-2023-03-18";
-  propagatedBuildInputs = [ just tex ];
+  propagatedBuildInputs = [ just tex xdg-open ];
   binName = "scut";
 
   installPhase = ''

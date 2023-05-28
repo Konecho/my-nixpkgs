@@ -28,7 +28,7 @@ xe:
     textlive/xelatex -no-pdf {{XE_PARAMS}} scutthesis
 [no-cd]
 clean:
-    -rm *.aux *.lo? *.toc *.ind *.inx *.gls *.glo *.ist *.idx *.ilg *.out *.bak *.bbl *.brf *.blg *.dvi *.ps *.xdv *.run.xml *.synctex.gz *.hd *.bcf
+    -rm *.aux *.lo? *.toc *.idx *.out *.bbl *.blg *.xdv *.run.xml *.synctex.gz *.hd *.bcf
 [no-cd]
 rmpdf:
     -rm scutthesis.pdf

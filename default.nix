@@ -22,4 +22,5 @@
   shox = pkgs.callPackage ./pkgs/shox { };
   labelme = pkgs.callPackage ./pkgs/labelme { };
   scutthesis = pkgs.callPackage ./pkgs/scutthesis { };
+  baru = pkgs.callPackage ./pkgs/baru { };
 }
