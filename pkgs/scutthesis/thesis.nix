@@ -4,7 +4,7 @@
   fetchFromGitHub,
   just,
   texlive,
-  xdg-open,
+  xdg-utils,
 }: let
   # tex = (texlive.combine {
   #   inherit (texlive) scheme-small
@@ -25,7 +25,7 @@ in
       hash = "sha256-GXZ/jaq8aSUAhn+p0yfs9wiCVq13Bx+GMJZvIVrc070=";
     };
     version = "unstable-2023-03-18";
-    propagatedBuildInputs = [just tex xdg-open];
+    propagatedBuildInputs = [just tex xdg-utils];
     binName = "scut";
 
     installPhase = ''
