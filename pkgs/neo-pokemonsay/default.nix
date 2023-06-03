@@ -44,10 +44,10 @@ stdenvNoCC.mkDerivation rec {
         '$(${coreutils}/bin/basename ' \
       --replace \
         'cowsay -f ' \
-        '${neo-cowsay}/bin/cowsay -f ' \
+        'COWPATH=${placeholder "out"}/share/pokemonsay ${neo-cowsay}/bin/cowsay -f ' \
       --replace \
         'cowthink -f ' \
-        '${neo-cowsay}/bin/cowthink -f '
+        'COWPATH=${placeholder "out"}/share/pokemonsay $${neo-cowsay}/bin/cowthink -f '
 
     substituteInPlace pokemonthink.sh \
       --replace \

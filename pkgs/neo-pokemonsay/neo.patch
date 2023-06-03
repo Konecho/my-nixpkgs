@@ -1,24 +1,22 @@
---- a/pokemonsay.sh
-+++ b/pokemonsay.sh
-@@ -36,7 +36,8 @@
- 
+--- a/pokemonsay.sh	2023-06-03 10:16:35.615398876 +0800
++++ b/pokemonsay.sh	2023-06-03 11:12:30.943726259 +0800
+@@ -21,7 +21,7 @@
+ 	echo "      Do not wrap the messages."
+ 	echo "    -l, --list"
+ 	echo "      List all the pokemon available."
+-	echo "    -L, --listForms"
++	echo "    -L, --list-forms"
+ 	echo "      List all the pokemon alternate forms available."
+ 	echo "    -N, --no-name"
+ 	echo "      Do not tell the pokemon name."
+@@ -37,6 +37,7 @@
  INSTALL_PATH=${HOME}/.bin/pokemonsay
  # Where the pokemon are.
--POKEMON_PATH=${INSTALL_PATH}/pokemons
-+POKEMON_PATH=${INSTALL_PATH}/pokemonsy
-+COWPATH=${INSTALL_PATH}/pokemonsy
+ POKEMON_PATH=${INSTALL_PATH}/pokemons
++COWPATH=$POKEMON_PATH
  
  list_pokemon() {
  	echo "Pokemon available in '$POKEMON_PATH/':"
-@@ -55,7 +56,7 @@
- list_pokemon_forms() {
- 	echo "Pokemon available in '$POKEMON_PATH/':"
- 	echo
--	ALL_POKEMON="$(find $POKEMON_PATH -regextype sed -regex ".*[\-]\+.*\.cow" | sort)"
-+	ALL_POKEMON="$(find $POKEMON_PATH -printf "%f" -regextype sed -regex ".*[\-]\+.*\.cow" | sort)"
- 	echo "$ALL_POKEMON" | while read -r POKEMON; do
- 		POKEMON=${POKEMON##*/}
- 		POKEMON=${POKEMON%.cow}
 @@ -67,69 +68,73 @@
  }
  
@@ -99,7 +97,7 @@
 +	-l | --list)
  		list_pokemon
  		;;
--	-L|--list-forms|--listForms)
+-	-L|--listForms)
 +	-L | --list-forms | --listForms)
  		list_pokemon_forms
  		;;
@@ -127,25 +125,24 @@
  done
  
  # Disable wrapping if the option is set, otherwise
-@@ -159,16 +164,16 @@
+@@ -159,7 +164,7 @@
  fi
  
  # Define which pokemon should be displayed.
 -if   [ -n "$POKEMON_NAME" ]; then
--	POKEMON_COW=$(find $POKEMON_PATH -iname "*$POKEMON_NAME.cow" | shuf -n 1)
 +if [ -n "$POKEMON_NAME" ]; then
-+	POKEMON_COW=$(find $POKEMON_PATH -printf "%f" -iname "*$POKEMON_NAME.cow" | shuf -n 1)
+ 	POKEMON_COW=$(find $POKEMON_PATH -iname "*$POKEMON_NAME.cow" | shuf -n 1)
  elif [ -n "$NATIONAL_DEX" ]; then
--	POKEMON_COW=$(find $POKEMON_PATH -regextype sed -regex ".*${NATIONAL_DEX}\_\w*[^\-]\.cow" | shuf -n 1)
-+	POKEMON_COW=$(find $POKEMON_PATH -printf "%f" -regextype sed -regex ".*${NATIONAL_DEX}\_\w*[^\-]\.cow" | shuf -n 1)
- elif [ -n "$NATIONAL_DEX_FORMS" ]; then
--	POKEMON_COW=$(find $POKEMON_PATH -name "${NATIONAL_DEX_FORMS}_*.cow" | shuf -n 1)
-+	POKEMON_COW=$(find $POKEMON_PATH -printf "%f" -name "${NATIONAL_DEX_FORMS}_*.cow" | shuf -n 1)
- elif [ -n "$COW_FILE" ]; then
- 	POKEMON_COW="$COW_FILE"
+ 	POKEMON_COW=$(find $POKEMON_PATH -regextype sed -regex ".*${NATIONAL_DEX}\_\w*[^\-]\.cow" | shuf -n 1)
+@@ -178,9 +183,9 @@
+ 
+ # Call cowsay or cowthink.
+ if [ -n "$THINK" ]; then
+-	cowthink -f "$POKEMON_COW" "${word_wrap[@]}" "$MESSAGE"
++	cowthink -f "${FILENAME%.*}" "${word_wrap[@]}" "$MESSAGE"
  else
--	POKEMON_COW=$(find $POKEMON_PATH -name "*.cow" | shuf -n 1)
-+	POKEMON_COW=$(find $POKEMON_PATH -printf "%f" -name "*.cow" | shuf -n 1)
+-	cowsay -f "$POKEMON_COW" "${word_wrap[@]}" "$MESSAGE"
++	cowsay -f "${FILENAME%.*}" "${word_wrap[@]}" "$MESSAGE"
  fi
  
- # Get the pokemon name.
+ # Write the pokemon name, unless requested otherwise.

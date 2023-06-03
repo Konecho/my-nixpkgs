@@ -23,6 +23,6 @@
   # gambaterm = pkgs.callPackage ./pkgs/gambaterm {};
   # gameboy = pkgs.callPackage ./pkgs/gameboy {};
   # pokewilds = pkgs.callPackage ./pkgs/pokewilds {};
-  # neo-pokemonsay = pkgs.callPackage ./pkgs/neo-pokemonsay {};
+  neo-pokemonsay = pkgs.callPackage ./pkgs/neo-pokemonsay {};
   arttime = pkgs.callPackage ./pkgs/arttime {};
 }
