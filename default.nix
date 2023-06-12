@@ -25,4 +25,5 @@
   # pokewilds = pkgs.callPackage ./pkgs/pokewilds {};
   neo-pokemonsay = pkgs.callPackage ./pkgs/neo-pokemonsay {};
   arttime = pkgs.callPackage ./pkgs/arttime {};
+  someblocks = pkgs.callPackage ./pkgs/someblocks {};
 }
