@@ -9,8 +9,7 @@ python3.pkgs.buildPythonPackage rec {
   format = "pyproject";
 
   src = fetchPypi {
-    pname = "anime_episode_parser";
-    inherit version;
+    inherit pname version;
     hash = "sha256-JcK45AP2DbRuIwCY9cuRlzi6g9MbjwTJWGSk+ZaD1/M=";
   };
 
