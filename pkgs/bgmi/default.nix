@@ -2,7 +2,6 @@
   lib,
   python3,
   fetchFromGitHub,
-  callPackage,
 }:
 python3.pkgs.buildPythonApplication rec {
   pname = "bgmi";
@@ -38,45 +37,42 @@ python3.pkgs.buildPythonApplication rec {
           "'^"
   '';
 
-  propagatedBuildInputs = with python3.pkgs;
-    [
-      beautifulsoup4
-      click
-      filetype
-      icalendar
-      (loguru.overrideAttrs (f: p: rec {
-        version = "0.7";
-        src = fetchFromGitHub {
-          owner = "Delgan";
-          repo = "loguru";
-          rev = version;
-          hash = "sha256-JwhJPX58KrPdX237L43o77spycLAVFv3K9njJiRK30Y=";
-        };
-      }))
-      peewee
-      pydantic
-      requests
-      semver
-      (stevedore.overrideAttrs (f: p: rec {
-        version = "5.1.0";
-        src = fetchPypi {
-          pname = "stevedore";
-          inherit version;
-          hash = "sha256-pUU0rPm4m8ftJkgHATtQW/B/dNvkvPo30yvQY4cLCHw=";
-        };
-      }))
-      strenum
-      tomlkit
-      tornado
-      transmission-rpc
-      wcwidth
-    ]
-    ++ [
-      (callPackage ./anime-episode-parser.nix {})
-      (callPackage ./pycomplete.nix {})
-      (callPackage ./qbittorrent-api.nix {})
-      (callPackage ./strsimpy.nix {})
-    ];
+  propagatedBuildInputs = with python3.pkgs; [
+    beautifulsoup4
+    click
+    filetype
+    icalendar
+    (loguru.overrideAttrs (f: p: rec {
+      version = "0.7";
+      src = fetchFromGitHub {
+        owner = "Delgan";
+        repo = "loguru";
+        rev = version;
+        hash = "sha256-JwhJPX58KrPdX237L43o77spycLAVFv3K9njJiRK30Y=";
+      };
+    }))
+    peewee
+    pydantic
+    requests
+    semver
+    (stevedore.overrideAttrs (f: p: rec {
+      version = "5.1.0";
+      src = fetchPypi {
+        pname = "stevedore";
+        inherit version;
+        hash = "sha256-pUU0rPm4m8ftJkgHATtQW/B/dNvkvPo30yvQY4cLCHw=";
+      };
+    }))
+    strenum
+    tomlkit
+    tornado
+    transmission-rpc
+    wcwidth
+    (callPackage ./anime-episode-parser.nix {})
+    (callPackage ./pycomplete.nix {})
+    (callPackage ./qbittorrent-api.nix {})
+    (callPackage ./strsimpy.nix {})
+  ];
 
   pythonImportsCheck = ["bgmi"];
 
