@@ -43,12 +43,11 @@ python3.pkgs.buildPythonApplication rec {
     filetype
     icalendar
     (loguru.overrideAttrs (f: p: rec {
-      version = "0.7";
-      src = fetchFromGitHub {
-        owner = "Delgan";
-        repo = "loguru";
-        rev = version;
-        hash = "sha256-JwhJPX58KrPdX237L43o77spycLAVFv3K9njJiRK30Y=";
+      version = "0.7.0";
+      src = fetchPypi {
+        pname = "loguru";
+        inherit version;
+        hash = "sha256-FhIFPO1q6E15Wd19XkMaBTJkIjfsIff9g6xz/lOeA+E=";
       };
     }))
     peewee
