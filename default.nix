@@ -26,4 +26,5 @@
   neo-pokemonsay = pkgs.callPackage ./pkgs/neo-pokemonsay {};
   arttime = pkgs.callPackage ./pkgs/arttime {};
   someblocks = pkgs.callPackage ./pkgs/someblocks {};
+  pokebase = pkgs.callPackage ./pkgs/pokebase {};
 }
