@@ -27,4 +27,5 @@
   arttime = pkgs.callPackage ./pkgs/arttime {};
   someblocks = pkgs.callPackage ./pkgs/someblocks {};
   pokebase = pkgs.callPackage ./pkgs/pokebase {};
+  bgmi = pkgs.callPackage ./pkgs/bgmi {};
 }
