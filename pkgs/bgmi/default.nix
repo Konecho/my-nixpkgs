@@ -15,27 +15,30 @@ python3.pkgs.buildPythonApplication rec {
     hash = "sha256-B4++aS4V3tOnI594HIsVQ/7XonRvXZoGicz45gECcOQ=";
   };
 
-  nativeBuildInputs = [
-    python3.pkgs.poetry-core
+  nativeBuildInputs = with python3.pkgs; [
+    poetry-core
+    pythonRelaxDepsHook
   ];
 
-  postPatch = ''
-    substituteInPlace pyproject.toml --replace \
-          "icalendar = '==5.0.7'" \
-          'icalendar = "${python3.pkgs.icalendar.version}"'
-    substituteInPlace pyproject.toml --replace \
-          'tomlkit = "0.11.8"' \
-          'tomlkit = "${python3.pkgs.tomlkit.version}"'
-    substituteInPlace pyproject.toml --replace \
-          "tornado = '==6.3.2'" \
-          'tornado = "${python3.pkgs.tornado.version}"'
-    substituteInPlace pyproject.toml --replace \
-          '"==' \
-          '"^'
-    substituteInPlace pyproject.toml --replace \
-          "'==" \
-          "'^"
-  '';
+  pythonRelaxDeps = true;
+
+  # postPatch = ''
+  #   substituteInPlace pyproject.toml --replace \
+  #         "icalendar = '==5.0.7'" \
+  #         'icalendar = "${python3.pkgs.icalendar.version}"'
+  #   substituteInPlace pyproject.toml --replace \
+  #         'tomlkit = "0.11.8"' \
+  #         'tomlkit = "${python3.pkgs.tomlkit.version}"'
+  #   substituteInPlace pyproject.toml --replace \
+  #         "tornado = '==6.3.2'" \
+  #         'tornado = "${python3.pkgs.tornado.version}"'
+  #   substituteInPlace pyproject.toml --replace \
+  #         '"==' \
+  #         '"^'
+  #   substituteInPlace pyproject.toml --replace \
+  #         "'==" \
+  #         "'^"
+  # '';
 
   propagatedBuildInputs = with python3.pkgs; [
     beautifulsoup4
