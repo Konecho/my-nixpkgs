@@ -28,4 +28,5 @@
   someblocks = pkgs.callPackage ./pkgs/someblocks {};
   pokebase = pkgs.callPackage ./pkgs/pokebase {};
   bgmi = pkgs.callPackage ./pkgs/bgmi {};
+  levee = pkgs.callPackage ./pkgs/levee {};
 }
