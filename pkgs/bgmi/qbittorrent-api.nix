@@ -24,7 +24,7 @@ python3.pkgs.buildPythonPackage rec {
     setuptools
     six
     urllib3
-    backports_functools_lru_cache
+    # backports_functools_lru_cache
   ];
 
   passthru.optional-dependencies = with python3.pkgs; {
