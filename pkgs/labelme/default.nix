@@ -47,6 +47,7 @@ python3.pkgs.buildPythonApplication rec {
     description = "Image Polygonal Annotation with Python (polygon, rectangle, circle, line, point and image-level flag annotation";
     homepage = "https://github.com/wkentaro/labelme";
     license = licenses.gpl3Only;
+    broken = true;
     maintainers = with maintainers; [ ];
   };
 }
