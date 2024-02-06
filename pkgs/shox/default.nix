@@ -22,7 +22,7 @@ buildGoModule rec {
     description = "A customisable, universally compatible terminal status bar";
     homepage = "https://github.com/liamg/shox";
     license = licenses.unlicense;
-    broken = true;
+    # broken = true;
     maintainers = with maintainers; [ ];
   };
 }
