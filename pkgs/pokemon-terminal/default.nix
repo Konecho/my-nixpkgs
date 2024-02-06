@@ -17,7 +17,7 @@ python3.pkgs.buildPythonApplication rec {
   ];
   postInstall = ''
     # Add support for swww
-    ln -sT ${./swww.py} $out/lib/python3.10/site-packages/pokemonterminal/wallpaper/adapters/swww.py
+    # ln -sT $\{./swww.py} $out/lib/python3.10/site-packages/pokemonterminal/wallpaper/adapters/swww.py
   '';
   meta = with lib; {
     description = "Pokemon terminal themes.";
