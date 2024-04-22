@@ -1,9 +1,9 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, fortune
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  fortune,
 }:
-
 stdenv.mkDerivation rec {
   pname = "fortunes";
   version = "unstable-2021-08-13";
@@ -15,13 +15,13 @@ stdenv.mkDerivation rec {
     hash = "sha256-O258vnAHQ3RrJnMPmVntmkj+RSfpHsf/YKJcLZd0owc=";
   };
 
-  buildInputs = [ fortune ];
+  buildInputs = [fortune];
 
   binName = "fortune-cn";
 
   installPhase = ''
     mkdir -p $out/bin
-    echo "#!/bin/bash" >> $out/bin/${binName} 
+    echo "#!/bin/bash" >> $out/bin/${binName}
     echo "${fortune}/bin/fortune \$(echo \$@ | sed 's~\\b\\(fortunes\\|chinese\\|tang300\\|song100\\|diet\\)\\b~@out@/share/games/fortunes/\\1~g')">>$out/bin/${binName}
     chmod +x $out/bin/${binName}
     substituteAllInPlace $out/bin/${binName}
@@ -40,8 +40,8 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     description = "A collection of fortune database files for Chinese users";
     homepage = "https://github.com/ruanyf/fortunes";
-    license = with licenses; [ ];
-    maintainers = with maintainers; [ ];
+    license = with licenses; [];
+    maintainers = with maintainers; [];
     mainProgram = "${binName}";
   };
 }
