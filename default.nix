@@ -30,4 +30,5 @@
   bgmi = pkgs.callPackage ./pkgs/bgmi {};
   levee = pkgs.callPackage ./pkgs/levee {};
   ch347api = pkgs.callPackage ./pkgs/ch347api {};
+  rime-ls = pkgs.callPackage ./pkgs/rime-ls {};
 }
