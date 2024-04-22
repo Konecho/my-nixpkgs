@@ -1,10 +1,10 @@
-{ pkgs
-, lib
-, fetchFromGitHub
-, buildNpmPackage
-, nodejs
+{
+  pkgs,
+  lib,
+  fetchFromGitHub,
+  buildNpmPackage,
+  nodejs,
 }:
-
 buildNpmPackage rec {
   pname = "ehentai-archive-info";
   version = "2.0.1";

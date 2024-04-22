@@ -1,8 +1,8 @@
-{ lib
-, python3
-, fetchFromGitHub
+{
+  lib,
+  python3,
+  fetchFromGitHub,
 }:
-
 python3.pkgs.buildPythonApplication rec {
   pname = "imgviz";
   version = "1.5.0";
@@ -24,12 +24,12 @@ python3.pkgs.buildPythonApplication rec {
     setuptools
   ];
 
-  pythonImportsCheck = [ "imgviz" ];
+  pythonImportsCheck = ["imgviz"];
 
   meta = with lib; {
     description = "Image Visualization Tools (object detection, semantic and instance segmentation";
     homepage = "https://github.com/wkentaro/imgviz";
     license = licenses.mit;
-    maintainers = with maintainers; [ ];
+    maintainers = with maintainers; [];
   };
 }
