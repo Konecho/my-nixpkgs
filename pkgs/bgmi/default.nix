@@ -5,14 +5,14 @@
 }:
 python3.pkgs.buildPythonApplication rec {
   pname = "bgmi";
-  version = "4.4.6";
+  version = "4.5.0";
   format = "pyproject";
 
   src = fetchFromGitHub {
     owner = "BGmi";
     repo = "BGmi";
     rev = "v${version}";
-    hash = "sha256-B4++aS4V3tOnI594HIsVQ/7XonRvXZoGicz45gECcOQ=";
+    hash = "sha256-f7MCNuQwr/TFqXzadgE41+nwtqOo+REGkrCqOYR1uaA=";
   };
 
   nativeBuildInputs = with python3.pkgs; [
@@ -45,26 +45,28 @@ python3.pkgs.buildPythonApplication rec {
     click
     filetype
     icalendar
-    (loguru.overrideAttrs (f: p: rec {
-      version = "0.7.0";
-      src = fetchPypi {
-        pname = "loguru";
-        inherit version;
-        hash = "sha256-FhIFPO1q6E15Wd19XkMaBTJkIjfsIff9g6xz/lOeA+E=";
-      };
-    }))
+    # (loguru.overrideAttrs (f: p: rec {
+    #   version = "0.7.0";
+    #   src = fetchPypi {
+    #     pname = "loguru";
+    #     inherit version;
+    #     hash = "sha256-FhIFPO1q6E15Wd19XkMaBTJkIjfsIff9g6xz/lOeA+E=";
+    #   };
+    # }))
+    loguru
     peewee
-    pydantic
+    pydantic_1
     requests
     semver
-    (stevedore.overrideAttrs (f: p: rec {
-      version = "5.1.0";
-      src = fetchPypi {
-        pname = "stevedore";
-        inherit version;
-        hash = "sha256-pUU0rPm4m8ftJkgHATtQW/B/dNvkvPo30yvQY4cLCHw=";
-      };
-    }))
+    stevedore
+    # (stevedore.overrideAttrs (f: p: rec {
+    #   version = "5.1.0";
+    #   src = fetchPypi {
+    #     pname = "stevedore";
+    #     inherit version;
+    #     hash = "sha256-pUU0rPm4m8ftJkgHATtQW/B/dNvkvPo30yvQY4cLCHw=";
+    #   };
+    # }))
     strenum
     tomlkit
     tornado
@@ -72,7 +74,8 @@ python3.pkgs.buildPythonApplication rec {
     wcwidth
     (callPackage ./anime-episode-parser.nix {})
     (callPackage ./pycomplete.nix {})
-    (callPackage ./qbittorrent-api.nix {})
+    # (callPackage ./qbittorrent-api.nix {})
+    qbittorrent-api
     (callPackage ./strsimpy.nix {})
   ];
 
