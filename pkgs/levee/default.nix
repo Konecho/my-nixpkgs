@@ -47,5 +47,6 @@ stdenv.mkDerivation rec {
     homepage = "https://git.sr.ht/~andreafeletto/levee";
     license = licenses.mit;
     maintainers = with maintainers; [];
+    broken = true;
   };
 }
