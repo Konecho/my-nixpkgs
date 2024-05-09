@@ -19,7 +19,7 @@
   labelme = pkgs.callPackage ./pkgs/labelme {};
   baru = pkgs.callPackage ./pkgs/baru {};
   # gambaterm = pkgs.callPackage ./pkgs/gambaterm {};
-  # gameboy = pkgs.callPackage ./pkgs/gameboy {};
+  gameboy = pkgs.callPackage ./pkgs/gameboy {};
   # pokewilds = pkgs.callPackage ./pkgs/pokewilds {};
   arttime = pkgs.callPackage ./pkgs/arttime {};
   someblocks = pkgs.callPackage ./pkgs/someblocks {};

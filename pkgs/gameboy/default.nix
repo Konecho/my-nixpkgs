@@ -12,16 +12,16 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "gameboy";
-  version = "unstable-2023-02-23";
+  version = "1.0.0";
 
   src = fetchFromGitHub {
     owner = "mohanson";
     repo = "gameboy";
-    rev = "bc90e61fa2de41fccd687a0ed98a8346066875f9";
-    hash = "sha256-i9tbQx6Y627BNkKaIkBYZtYwRBqA9FNPnBTFPnGKogQ=";
+    rev = "0df1f63ae6ed7331e60fa597e7e7c93d9745e191";
+    hash = "sha256-/R3DuzlfGdhtaSIF9f8sGY1143rOFVXR1ufIuyCNEAs=";
   };
 
-  cargoHash = "sha256-M+/Lktp8VYaFjkh1a+IU/YdJK8X7+4CzSJB9jBM2YHk=";
+  cargoHash = "sha256-nOi0y41n8zd96DIIiWbRhtc1msmOKsB7VXIMdmv/CNQ=";
 
   nativeBuildInputs = [
     pkg-config
