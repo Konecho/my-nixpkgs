@@ -2,7 +2,7 @@
   lib,
   stdenv,
   fetchFromSourcehut,
-  zig,
+  zig_0_11,
   wayland,
   pkg-config,
   wayland-protocols,
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
     fetchSubmodules = true;
   };
 
-  nativeBuildInputs = [zig wayland pkg-config];
+  nativeBuildInputs = [zig_0_11 wayland pkg-config];
   buildInputs = [
     wayland-protocols
     pulseaudio
