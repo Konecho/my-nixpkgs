@@ -6,13 +6,13 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "rime-ls";
-  version = "0.2.4";
+  version = "0.3.0";
 
   src = fetchFromGitHub {
     owner = "wlh320";
     repo = "rime-ls";
     rev = "v${version}";
-    hash = "sha256-6jiyOVjnYpX9C9H2+tTJqRUeqNWNVJ+acqStwMkaWb0=";
+    hash = "sha256-xzquG8DMvZGiszXrYGiv31QGDd776UbKrNnwzGv9DQ0=";
   };
 
   cargoLock = {
