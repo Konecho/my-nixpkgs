@@ -1,37 +1,41 @@
 {
   lib,
   python3,
+  libretro,
   fetchFromGitHub,
 }: let
   pypkgs = python3.pkgs;
 in
   pypkgs.buildPythonApplication rec {
     pname = "gambaterm";
-    version = "0.12.1";
+    version = "0.12.4";
     format = "pyproject";
 
     src = fetchFromGitHub {
       owner = "vxgmichel";
       repo = "gambatte-terminal";
       rev = "v${version}";
-      hash = "sha256-rL0B14aGn0tTsguu25hGq8oAR8HupNCm/dg6I7IwxZg=";
+      hash = "sha256-VZITiBgcHBjIk4d82Swt/hmlY2+FXjAk0WOx2iNrL8U=";
     };
 
     nativeBuildInputs = with pypkgs; [
       cython
-      numpy
+      oldest-supported-numpy
       setuptools
       wheel
     ];
-    propagatedBuildInputs = with pypkgs; [
-      prompt-toolkit
-      asyncssh
-      sounddevice
-      samplerate
-      xlib
-      pyaudio
-    ];
-    # pythonImportsCheck = ["gambatte_terminal"];
+    propagatedBuildInputs =
+      (with pypkgs; [
+        prompt-toolkit
+        asyncssh
+        sounddevice
+        samplerate
+        xlib
+        # pynput
+        pyaudio
+      ])
+      ++ [libretro.gambatte];
+    pythonImportsCheck = ["gambaterm"];
 
     meta = with lib; {
       description = "A terminal frontend for gambatte game boy color emulator";

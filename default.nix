@@ -18,9 +18,9 @@
   shox = pkgs.callPackage ./pkgs/shox {};
   labelme = pkgs.callPackage ./pkgs/labelme {};
   baru = pkgs.callPackage ./pkgs/baru {};
-  # gambaterm = pkgs.callPackage ./pkgs/gambaterm {};
+  gambaterm = pkgs.callPackage ./pkgs/gambaterm {};
   gameboy = pkgs.callPackage ./pkgs/gameboy {};
-  # pokewilds = pkgs.callPackage ./pkgs/pokewilds {};
+  pokewilds = pkgs.callPackage ./pkgs/pokewilds {};
   arttime = pkgs.callPackage ./pkgs/arttime {};
   someblocks = pkgs.callPackage ./pkgs/someblocks {};
   pokebase = pkgs.callPackage ./pkgs/pokebase {};
@@ -28,4 +28,5 @@
   levee = pkgs.callPackage ./pkgs/levee {};
   ch347api = pkgs.callPackage ./pkgs/ch347api {};
   rime-ls = pkgs.callPackage ./pkgs/rime-ls {};
+  teranoptia = pkgs.callPackage ./pkgs/teranoptia {};
 }

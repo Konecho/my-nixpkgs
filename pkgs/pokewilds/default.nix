@@ -3,20 +3,23 @@
   stdenv,
   unzip,
   jre,
+  systemd,
+  pkg-config,
   udev,
   makeWrapper,
   # libudev0-shim,
 }:
 stdenv.mkDerivation rec {
   pname = "pokewilds";
-  version = "0.8.9";
+  version = "0.8.11";
 
   src = builtins.fetchurl {
     url = "https://github.com/SheerSt/pokewilds/releases/download/v${version}/pokewilds-otherplatforms.zip";
-    sha256 = "sha256:11yd2w29br9vr6kw175vflvj326pfy9g9drf7y51m65pr2525lfp";
+    sha256 = "sha256:1fi2zdr6mi91f4m8d46pb6822iglzb7b4fkzb3nv9rky8izwl2jw";
   };
-  nativeBuildInputs = [unzip makeWrapper];
-  buildInputs = [jre udev];
+  nativeBuildInputs = [unzip makeWrapper pkg-config udev];
+  buildInputs = [systemd];
+  propagatedBuildInputs = [jre udev];
   buildPhase = "";
   installPhase = ''
     mkdir -p $out/bin
@@ -34,6 +37,7 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/SheerSt/pokewilds/releases/latest/download/pokewilds-linux64.zip";
     license = with licenses; [];
     maintainers = with maintainers; [];
+    broken = true;
     # mainProgram = "PokeWilds-x64";
   };
 }
