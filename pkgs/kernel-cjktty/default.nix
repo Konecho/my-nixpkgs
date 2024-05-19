@@ -40,4 +40,9 @@ in
     ];
 
     extraMeta.branch = versionX_X;
+
+    meta = with lib; {
+      # platforms = platforms.linux;
+      platforms = ["x86_64-linux"];
+    };
   }
