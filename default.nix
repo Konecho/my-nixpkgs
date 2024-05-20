@@ -29,5 +29,5 @@
   ch347api = pkgs.callPackage ./pkgs/ch347api {};
   rime-ls = pkgs.callPackage ./pkgs/rime-ls {};
   teranoptia = pkgs.callPackage ./pkgs/teranoptia {};
-  kernel-cjktty = pkgs.callPackage ./pkgs/kernel-cjktty {};
+  # kernel-cjktty = pkgs.callPackage ./pkgs/kernel-cjktty {};
 }
