@@ -23,11 +23,14 @@
   pokewilds = pkgs.callPackage ./pkgs/pokewilds {};
   arttime = pkgs.callPackage ./pkgs/arttime {};
   someblocks = pkgs.callPackage ./pkgs/someblocks {};
-  pokebase = pkgs.callPackage ./pkgs/pokebase {};
+  pokebase = pkgs.callPackage ./pkgs/python/pokebase {};
   bgmi = pkgs.callPackage ./pkgs/bgmi {};
   levee = pkgs.callPackage ./pkgs/levee {};
-  ch347api = pkgs.callPackage ./pkgs/ch347api {};
+  ch347api = pkgs.callPackage ./pkgs/python/ch347api {};
   rime-ls = pkgs.callPackage ./pkgs/rime-ls {};
   teranoptia = pkgs.callPackage ./pkgs/teranoptia {};
   # kernel-cjktty = pkgs.callPackage ./pkgs/kernel-cjktty {};
+  rust-demangler = pkgs.callPackage ./pkgs/python/rust-demangler {};
+  kflash = pkgs.callPackage ./pkgs/kflash {};
+  form = pkgs.callPackage ./pkgs/form {};
 }
