@@ -25,6 +25,6 @@ stdenv.mkDerivation rec {
     description = "Arttime is a terminal application that blends beauty of text-art with functionality of clock / timer / pattern-based time manager";
     homepage = "https://github.com/poetaman/arttime";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [];
+    maintainers = [];
   };
 }

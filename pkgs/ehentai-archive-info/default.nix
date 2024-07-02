@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   fetchFromGitHub,
   buildNpmPackage,
@@ -40,12 +39,12 @@ buildNpmPackage rec {
     substituteAllInPlace $out/bin/${binName}
   '';
 
-  meta = with lib; {
+  meta = {
     description = "Add metadata files to E*Hentai gallery archives";
-    homepage = https://github.com/dnsev-h/ehentai-archive-info;
+    homepage = "https://github.com/dnsev-h/ehentai-archive-info";
     changelog = "https://github.com/dnsev-h/ehentai-archive-info/releases";
-    license = licenses.mit;
-    platforms = platforms.all;
+    license = with lib; licenses.mit;
+    platforms = with lib; platforms.all;
     mainProgram = "${binName}";
   };
 }

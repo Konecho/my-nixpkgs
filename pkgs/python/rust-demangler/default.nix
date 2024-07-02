@@ -25,6 +25,6 @@ python3.pkgs.buildPythonPackage rec {
     description = "A package for demangling Rust symbols";
     homepage = "https://pypi.org/project/rust-demangler/";
     license = licenses.mit;
-    maintainers = with maintainers; [];
+    maintainers = [];
   };
 }

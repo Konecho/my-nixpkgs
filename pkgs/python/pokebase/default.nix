@@ -26,6 +26,6 @@ python3.pkgs.buildPythonPackage rec {
     description = "Python 3 wrapper for Pokéapi v2";
     homepage = "https://github.com/PokeAPI/pokebase";
     license = licenses.bsd3;
-    maintainers = with maintainers; [];
+    maintainers = [];
   };
 }

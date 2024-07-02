@@ -25,6 +25,6 @@ python3.pkgs.buildPythonPackage rec {
     description = "A library to parse episode info from anime title";
     homepage = "https://pypi.org/project/anime-episode-parser/";
     license = licenses.mit;
-    maintainers = with maintainers; [];
+    maintainers = [];
   };
 }

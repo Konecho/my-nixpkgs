@@ -40,12 +40,12 @@ rustPlatform.buildRustPackage rec {
     librime
   ];
 
-  meta = with lib; {
+  meta = {
     description = "A language server for Rime input method engine 通过 LSP 代码补全使用 Rime 输入法";
     homepage = "https://github.com/wlh320/rime-ls";
     changelog = "https://github.com/wlh320/rime-ls/blob/${src.rev}/CHANGELOG.md";
-    license = licenses.bsd3;
-    maintainers = with maintainers; [];
+    license = with lib; licenses.bsd3;
+    maintainers = [];
     mainProgram = "rime_ls";
   };
 }
