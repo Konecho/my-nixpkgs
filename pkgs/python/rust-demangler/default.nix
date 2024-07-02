@@ -1,11 +1,9 @@
 {
   lib,
-  buildPythonPackage,
+  python3,
   fetchPypi,
-  setuptools,
-  wheel,
 }:
-buildPythonPackage rec {
+python3.pkgs.buildPythonPackage rec {
   pname = "rust-demangler";
   version = "1.0";
   pyproject = true;
@@ -16,7 +14,7 @@ buildPythonPackage rec {
     hash = "sha256-o+iAMuaRMi0UzsE399mvvkSsZahCF8WZvSz+SA7IvQ8=";
   };
 
-  nativeBuildInputs = [
+  nativeBuildInputs = with python3.pkgs; [
     setuptools
     wheel
   ];
