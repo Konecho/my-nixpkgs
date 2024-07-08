@@ -15,6 +15,10 @@ python3.pkgs.buildPythonPackage rec {
 
   pythonImportsCheck = ["strsimpy"];
 
+  # ERROR: testSIFT4 (strsimpy.sift4_test.SIFT4Test.testSIFT4)
+  # AttributeError: 'SIFT4Test' object has no attribute 'assertEquals'. Did you mean: 'assertEqual'?
+  doCheck = false;
+
   meta = with lib; {
     description = "A library implementing different string similarity and distance measures";
     homepage = "https://pypi.org/project/strsimpy/";
