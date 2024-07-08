@@ -19,7 +19,7 @@
   ehi = pkgs.callPackage ./pkgs/ehi {};
   form = pkgs.callPackage ./pkgs/form {};
   fortunes = pkgs.callPackage ./pkgs/fortunes {};
-  gambaterm = pkgs.callPackage ./pkgs/gambaterm {};
+  # gambaterm = pkgs.callPackage ./pkgs/gambaterm {};
   gameboy = pkgs.callPackage ./pkgs/gameboy {};
   kflash = pkgs.callPackage ./pkgs/kflash {};
   labelme = pkgs.callPackage ./pkgs/labelme {};
