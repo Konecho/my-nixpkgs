@@ -33,5 +33,5 @@
   someblocks = pkgs.callPackage ./pkgs/someblocks {};
   teranoptia = pkgs.callPackage ./pkgs/teranoptia {};
   xdcmd = pkgs.callPackage ./pkgs/xdcmd {};
-  cdda = pkgs.cataclysmDDA.stable.curses;
+  # cdda = pkgs.cataclysmDDA.stable.curses;
 }
