@@ -32,6 +32,7 @@
   shox = pkgs.callPackage ./pkgs/shox {};
   someblocks = pkgs.callPackage ./pkgs/someblocks {};
   teranoptia = pkgs.callPackage ./pkgs/teranoptia {};
+  tuigreet = pkgs.callPackage ./pkgs/tuigreet {};
   xdcmd = pkgs.callPackage ./pkgs/xdcmd {};
   # cdda = pkgs.cataclysmDDA.stable.curses;
 }
