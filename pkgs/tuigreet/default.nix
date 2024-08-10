@@ -6,15 +6,15 @@
 rustPlatform.buildRustPackage rec {
   pname = "tuigreet";
 
-  version = "3a5cdbf986df538a1be4a1ca79853b601601420c";
+  version = "0.9.1";
 
   src = fetchFromGitHub {
     owner = "Konecho";
     repo = "tuigreet";
-    rev = version;
-    sha256 = "sha256-F93v/KnqMEYxZn1UDYCNPx48e4vd5JINh29jZUPmV0k=";
+    rev = "refs/tags/${version}";
+    sha256 = "sha256-ImvABT2+n39/Sdx51I+mDBdA1EXFCenqk7XjA/gNM/Q=";
   };
-  cargoHash = "sha256-uJGFsQ4CZWD7bC4qQxMHaJpjIh2UoBwJAf4FBFnzq0U=";
+  cargoHash = "sha256-RkJjAmZ++4nc/lLh8g0LxGq2DjZGxQEjFOl8Yzx116A=";
 
   meta = {
     description = "Graphical console greeter for greetd";
