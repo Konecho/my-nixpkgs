@@ -13,7 +13,7 @@
 
   # kernel-cjktty = pkgs.callPackage ./pkgs/kernel-cjktty {};
   arttime = pkgs.callPackage ./pkgs/arttime {};
-  baru = pkgs.callPackage ./pkgs/baru {};
+  # baru = pkgs.callPackage ./pkgs/baru {};
   bgmi = pkgs.callPackage ./pkgs/bgmi {};
   ch347api = pkgs.callPackage ./pkgs/python/ch347api {};
   ehi = pkgs.callPackage ./pkgs/ehi {};
