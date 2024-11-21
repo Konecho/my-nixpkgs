@@ -1,3 +1,4 @@
 [rime-ls]
 src.github = "wlh320/rime-ls"
 fetch.github = "wlh320/rime-ls"
+cargo_locks = ["Cargo.lock"]

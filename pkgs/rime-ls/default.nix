@@ -1,51 +1,51 @@
+# https://github.com/nix-community/nur-combined/blob/master/repos/definfo/pkgs/rime-ls/default.nix
 {
+  source,
   lib,
+  stdenv,
   rustPlatform,
-  fetchFromGitHub,
+  pkg-config,
+  makeWrapper,
   librime,
-}:
-rustPlatform.buildRustPackage rec {
-  pname = "rime-ls";
-  version = "0.3.0";
-
-  src = fetchFromGitHub {
-    owner = "wlh320";
-    repo = "rime-ls";
-    rev = "v${version}";
-    hash = "sha256-xzquG8DMvZGiszXrYGiv31QGDd776UbKrNnwzGv9DQ0=";
+  rime-data,
+  symlinkJoin,
+  rimeDataPkgs ? [rime-data],
+}: let
+  rimeDataDrv = symlinkJoin {
+    name = "rime_ls-rime-data";
+    paths = rimeDataPkgs;
   };
+  librime' = librime.overrideAttrs (old: {
+    postInstall = ''
+      cp -r "${rimeDataDrv}/share/rime-data/." $out/share/rime-data
+    '';
+  });
+in
+  rustPlatform.buildRustPackage {
+    inherit (source) pname src version;
 
-  cargoLock = {
-    lockFile = ./Cargo.lock;
-    outputHashes = {
-      "librime-sys-0.1.0" = "sha256-zJShR0uaKH42RYjTfrBFLM19Jaz2r/4rNn9QIumwTfA=";
+    cargoLock = source.cargoLock."Cargo.lock";
+
+    nativeBuildInputs = [
+      pkg-config
+      rustPlatform.bindgenHook
+      makeWrapper
+    ];
+
+    buildInputs = [librime'];
+
+    # Set RIME_DATA_DIR to work around test_get_candidates during checkPhase
+    env.RIME_DATA_DIR = lib.optionalString stdenv.isLinux "${librime'}/share/rime-data";
+
+    postInstall = ''
+      wrapProgram $out/bin/rime_ls \
+        --set RIME_DATA_DIR ${librime'}/share/rime-data
+    '';
+
+    meta = with lib; {
+      description = "A language server for Rime input method engine";
+      homepage = "https://github.com/wlh320/rime-ls";
+      license = licenses.bsd3;
+      maintainers = with maintainers; [];
     };
-  };
-
-  postPatch = ''
-    ln -s ${./Cargo.lock} Cargo.lock
-  '';
-
-  checkFlags = [
-    # panicked at src/rime.rs:317:5:
-    # assertion failed: res.candidates.len() != 0
-    "--skip=rime::test_get_candidates"
-  ];
-
-  nativeBuildInputs = [
-    rustPlatform.bindgenHook
-  ];
-
-  propagatedBuildInputs = [
-    librime
-  ];
-
-  meta = {
-    description = "A language server for Rime input method engine 通过 LSP 代码补全使用 Rime 输入法";
-    homepage = "https://github.com/wlh320/rime-ls";
-    changelog = "https://github.com/wlh320/rime-ls/blob/${src.rev}/CHANGELOG.md";
-    license = with lib; licenses.bsd3;
-    maintainers = [];
-    mainProgram = "rime_ls";
-  };
-}
+  }

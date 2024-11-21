@@ -6,3 +6,8 @@ create PKGNAME:
     alejandra .
     git add .
     nix run .#{{PKGNAME}}
+
+fetch:
+    nix run nixpkgs#nvfetcher
+    git add .
+    alejandra -e ./_sources .

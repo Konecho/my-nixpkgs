@@ -5,7 +5,17 @@
 # Having pkgs default to <nixpkgs> is fine though, and it lets you use short
 # commands such as:
 #     nix-build -A mypackage
-{pkgs ? import <nixpkgs> {}}: {
+{pkgs ? import <nixpkgs> {}}: let
+  source = (import ./_sources/generated.nix) {
+    inherit
+      (pkgs)
+      fetchgit
+      fetchurl
+      fetchFromGitHub
+      dockerTools
+      ;
+  };
+in {
   # The `lib`, `modules`, and `overlay` names are special
   lib = import ./lib {inherit pkgs;}; # functions
   modules = import ./modules; # NixOS modules
@@ -27,7 +37,7 @@
   pokebase = pkgs.callPackage ./pkgs/python/pokebase {};
   pokemon-terminal = pkgs.callPackage ./pkgs/pokemon-terminal {};
   pokewilds = pkgs.callPackage ./pkgs/pokewilds {};
-  rime-ls = pkgs.callPackage ./pkgs/rime-ls {};
+  rime-ls = pkgs.callPackage ./pkgs/rime-ls {source = source.rime-ls;};
   rust-demangler = pkgs.callPackage ./pkgs/python/rust-demangler {};
   shox = pkgs.callPackage ./pkgs/shox {};
   someblocks = pkgs.callPackage ./pkgs/someblocks {};
