@@ -2,3 +2,7 @@
 src.github = "wlh320/rime-ls"
 fetch.github = "wlh320/rime-ls"
 cargo_locks = ["Cargo.lock"]
+
+[xdcmd]
+src.github = "TransparentLC/xdcmd"
+fetch.github = "TransparentLC/xdcmd"

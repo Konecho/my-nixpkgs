@@ -18,4 +18,15 @@
       };
     };
   };
+  xdcmd = {
+    pname = "xdcmd";
+    version = "v1.0.0";
+    src = fetchFromGitHub {
+      owner = "TransparentLC";
+      repo = "xdcmd";
+      rev = "v1.0.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-uFZbBPZYX3QQGluuyOCzs60PepPBXwgKzmDdHyxbhEc=";
+    };
+  };
 }

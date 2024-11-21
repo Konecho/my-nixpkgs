@@ -1,19 +1,13 @@
 {
   lib,
-  fetchFromGitHub,
   python3Packages,
   chafa,
+  source,
 }:
 python3Packages.buildPythonApplication {
-  pname = "xdcmd";
-  version = "84f159d";
+  inherit (source) pname src version;
   format = "other";
-  src = fetchFromGitHub {
-    owner = "TransparentLC";
-    repo = "xdcmd";
-    rev = "84f159decebd34ef8e9cba02d5100f7d4cc32baf";
-    sha256 = "sha256-zh8XAns6CDHl1AkaWACQAxn2oTslvB35yqbJDeZvTfU=";
-  };
+
   propagatedBuildInputs = with python3Packages; [
     beautifulsoup4
     requests

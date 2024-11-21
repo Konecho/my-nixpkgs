@@ -43,6 +43,6 @@ in {
   someblocks = pkgs.callPackage ./pkgs/someblocks {};
   teranoptia = pkgs.callPackage ./pkgs/teranoptia {};
   tuigreet = pkgs.callPackage ./pkgs/tuigreet {};
-  xdcmd = pkgs.callPackage ./pkgs/xdcmd {};
+  xdcmd = pkgs.callPackage ./pkgs/xdcmd {source = source.xdcmd;};
   # cdda = pkgs.cataclysmDDA.stable.curses;
 }
