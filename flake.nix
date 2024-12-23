@@ -1,9 +1,14 @@
 {
   description = "My personal NUR repository";
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-  outputs = {
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    tgt.url = "github:FedericoBruzzone/tgt";
+    tgt.inputs.nixpkgs.follows = "nixpkgs";
+  };
+  outputs = inputs @ {
     self,
     nixpkgs,
+    ...
   }: let
     systems = [
       "x86_64-linux"
@@ -19,6 +24,11 @@
       import ./default.nix {
         pkgs = import nixpkgs {
           inherit system;
+          overlays = [
+            (self: super: rec {
+              tgt = inputs.tgt.packages.${system}.default;
+            })
+          ];
         };
       });
     packages = forAllSystems (system: nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v) self.legacyPackages.${system});
