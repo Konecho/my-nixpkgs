@@ -40,6 +40,7 @@ in {
   rime-ls = pkgs.callPackage ./pkgs/rime-ls {source = source.rime-ls;};
   rust-demangler = pkgs.callPackage ./pkgs/python/rust-demangler {};
   shox = pkgs.callPackage ./pkgs/shox {};
+  neuro-sama-cursor = pkgs.callPackage ./pkgs/neuro-sama-cursor {};
   someblocks = pkgs.callPackage ./pkgs/someblocks {};
   teranoptia = pkgs.callPackage ./pkgs/teranoptia {};
   tuigreet = pkgs.callPackage ./pkgs/tuigreet {};
