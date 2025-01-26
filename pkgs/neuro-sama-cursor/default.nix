@@ -17,8 +17,8 @@ stdenvNoCC.mkDerivation rec {
   ];
 
   installPhase = ''
-    mkdir -p $out/share/icons
-    cp cursors/* $out/share/icons/
+    mkdir -p $out/share/icons/Neuro-sama
+    mv ./* $out/share/icons/Neuro-sama
   '';
 
   meta = with lib; {
