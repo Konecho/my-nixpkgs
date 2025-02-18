@@ -3,16 +3,16 @@
 {
   rime-ls = {
     pname = "rime-ls";
-    version = "v0.4.0";
+    version = "v0.4.1";
     src = fetchFromGitHub {
       owner = "wlh320";
       repo = "rime-ls";
-      rev = "v0.4.0";
+      rev = "v0.4.1";
       fetchSubmodules = false;
-      sha256 = "sha256-ZqoRFIF3ehfEeTN+ZU+/PAzA4JyS1403+sqZdzwJHA8=";
+      sha256 = "sha256-IhrfUPC+7Gsg2n6nsGiK/wRoFGKtLXsRLQBw6XIVu0U=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./rime-ls-v0.4.0/Cargo.lock;
+      lockFile = ./rime-ls-v0.4.1/Cargo.lock;
       outputHashes = {
         "librime-sys-0.1.0" = "sha256-zJShR0uaKH42RYjTfrBFLM19Jaz2r/4rNn9QIumwTfA=";
       };

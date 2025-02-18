@@ -2,7 +2,7 @@
     "rime-ls": {
         "cargoLocks": {
             "Cargo.lock": [
-                "./rime-ls-v0.4.0/Cargo.lock",
+                "./rime-ls-v0.4.1/Cargo.lock",
                 {
                     "librime-sys-0.1.0": "sha256-zJShR0uaKH42RYjTfrBFLM19Jaz2r/4rNn9QIumwTfA="
                 }
@@ -20,11 +20,12 @@
             "name": null,
             "owner": "wlh320",
             "repo": "rime-ls",
-            "rev": "v0.4.0",
-            "sha256": "sha256-ZqoRFIF3ehfEeTN+ZU+/PAzA4JyS1403+sqZdzwJHA8=",
+            "rev": "v0.4.1",
+            "sha256": "sha256-IhrfUPC+7Gsg2n6nsGiK/wRoFGKtLXsRLQBw6XIVu0U=",
+            "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.4.0"
+        "version": "v0.4.1"
     },
     "xdcmd": {
         "cargoLocks": null,
@@ -42,6 +43,7 @@
             "repo": "xdcmd",
             "rev": "v1.0.0",
             "sha256": "sha256-uFZbBPZYX3QQGluuyOCzs60PepPBXwgKzmDdHyxbhEc=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v1.0.0"
