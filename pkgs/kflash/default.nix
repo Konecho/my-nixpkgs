@@ -19,7 +19,7 @@ python3.pkgs.buildPythonApplication rec {
   ];
 
   propagatedBuildInputs = with python3.pkgs; [
-    enum34
+    # enum34
     pyelftools
     pyserial
   ];
