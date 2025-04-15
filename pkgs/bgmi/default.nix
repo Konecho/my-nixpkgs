@@ -85,7 +85,7 @@ python3.pkgs.buildPythonApplication rec {
     description = "Looking for maintainers] BGmi is a cli tool with Web UI for subscribed bangumi";
     homepage = "https://github.com/BGmi/BGmi";
     license = licenses.mit;
-    # broken = true;
+    broken = true;
     maintainers = with maintainers; [];
   };
 }
