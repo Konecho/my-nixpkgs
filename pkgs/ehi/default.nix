@@ -45,7 +45,6 @@ buildNpmPackage rec {
     changelog = "https://github.com/dnsev-h/ehentai-archive-info/releases";
     license = with lib; licenses.mit;
     platforms = with lib; platforms.all;
-    broken = true;
     mainProgram = "${binName}";
   };
 }
