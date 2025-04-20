@@ -22,6 +22,7 @@ rustPlatform.buildRustPackage rec {
     changelog = "https://github.com/djmcgill/form/blob/${src.rev}/CHANGELOG.md";
     license = licenses.mit;
     maintainers = with maintainers; [];
+    broken = true;
     mainProgram = "form";
   };
 }
