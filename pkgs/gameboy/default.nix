@@ -47,6 +47,7 @@ rustPlatform.buildRustPackage rec {
     description = "Full featured Cross-platform GameBoy emulator by Rust. Forever boys";
     homepage = "https://github.com/mohanson/gameboy";
     license = licenses.wtfpl;
+    broken = true;
     maintainers = with maintainers; [];
   };
 }
