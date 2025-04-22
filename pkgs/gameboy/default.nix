@@ -21,7 +21,8 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-/R3DuzlfGdhtaSIF9f8sGY1143rOFVXR1ufIuyCNEAs=";
   };
 
-  cargoHash = "sha256-nOi0y41n8zd96DIIiWbRhtc1msmOKsB7VXIMdmv/CNQ=";
+  useFetchCargoVendor = true;
+  cargoHash = "sha256-V227BGe2+5JYznJp4gZqtojsKHGSFxH7sFZG4RhgQd0=";
 
   nativeBuildInputs = [
     pkg-config
@@ -47,7 +48,6 @@ rustPlatform.buildRustPackage rec {
     description = "Full featured Cross-platform GameBoy emulator by Rust. Forever boys";
     homepage = "https://github.com/mohanson/gameboy";
     license = licenses.wtfpl;
-    broken = true;
     maintainers = with maintainers; [];
   };
 }
