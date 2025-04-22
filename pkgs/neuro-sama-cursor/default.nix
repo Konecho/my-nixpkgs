@@ -1,20 +1,12 @@
 {
   lib,
   stdenvNoCC,
-  fetchFromGitHub,
-  inkscape,
-  xcursorgen,
 }:
-stdenvNoCC.mkDerivation rec {
+stdenvNoCC.mkDerivation {
   pname = "neuro-sama-cursor";
   version = "1.0";
 
   src = ./Neuro-sama.tar.gz;
-
-  nativeBuildInputs = [
-    # inkscape
-    # xcursorgen
-  ];
 
   installPhase = ''
     mkdir -p $out/share/icons/Neuro-sama
@@ -22,9 +14,9 @@ stdenvNoCC.mkDerivation rec {
   '';
 
   meta = with lib; {
-    description = "Numix cursor theme";
-    homepage = "https://numixproject.github.io";
-    license = licenses.gpl3;
+    description = "Neuro sama cursor";
+    homepage = "https://store.kde.org/p/2163432";
+    license = licenses.unlicense;
     platforms = platforms.all;
     maintainers = with maintainers; [offline];
   };
