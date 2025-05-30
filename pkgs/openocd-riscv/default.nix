@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
     repo = "openocd_riscv";
     rev = "a0220ad302589de0e9ed41344ccf5a87118cf54b";
     hash = "sha256-/l3nE/tUhGWlc8iC3CoFXeXXfkGfZ6S0ch9IhYqRCuE=";
-    fetchSubmodules = true;
+    # fetchSubmodules = true;
   };
 
   # sudo apt-get install libtool automake libusb-1.0.0-dev texinfo libusb-dev libyaml-dev pkg-config
