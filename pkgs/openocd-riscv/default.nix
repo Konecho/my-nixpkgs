@@ -22,7 +22,8 @@ stdenv.mkDerivation rec {
     owner = "SpinalHDL";
     repo = "openocd_riscv";
     rev = "a0220ad302589de0e9ed41344ccf5a87118cf54b";
-    hash = "sha256-DEg3rafwyqlXBpLAhEEPykpNrulK3xsK4WbF0XwH8fE=";
+    # hash = "sha256-DEg3rafwyqlXBpLAhEEPykpNrulK3xsK4WbF0XwH8fE=";
+    hash = "sha256-TGFkD6UetmChI6XFD67IWu1hv8XZ3t3WTo8BYRKxvDg=";
     fetchSubmodules = true;
     # deepClone = true;
     leaveDotGit = true;
