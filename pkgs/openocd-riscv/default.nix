@@ -66,6 +66,6 @@ stdenv.mkDerivation rec {
     license = lib.licenses.gpl2Only;
     maintainers = with lib.maintainers; [];
     mainProgram = "openocd";
-    platforms = lib.platforms.all;
+    platforms = ["x86_64-linux"];
   };
 }
