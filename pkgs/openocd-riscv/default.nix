@@ -22,7 +22,7 @@ stdenv.mkDerivation rec {
     owner = "SpinalHDL";
     repo = "openocd_riscv";
     rev = "a0220ad302589de0e9ed41344ccf5a87118cf54b";
-    hash = "sha256-/l3nE/tUhGWlc8iC3CoFXeXXfkGfZ6S0ch9IhYqRCuE=";
+    hash = "sha256-6Ri4jOe1JErB6sqSO7q/JqEN4YR+vJYm4QRCrxaVWis=";
     # fetchSubmodules = true;
   };
 
