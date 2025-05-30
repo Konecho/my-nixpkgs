@@ -45,4 +45,5 @@ in {
   teranoptia = pkgs.callPackage ./pkgs/teranoptia {};
   tuigreet = pkgs.callPackage ./pkgs/tuigreet {};
   xdcmd = pkgs.callPackage ./pkgs/xdcmd {source = source.xdcmd;};
+  openocd-riscv = pkgs.callPackage ./pkgs/openocd-riscv {};
 }
