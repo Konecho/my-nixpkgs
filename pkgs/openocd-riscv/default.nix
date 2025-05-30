@@ -22,11 +22,11 @@ stdenv.mkDerivation rec {
     owner = "SpinalHDL";
     repo = "openocd_riscv";
     rev = "a0220ad302589de0e9ed41344ccf5a87118cf54b";
-    # hash = "sha256-DEg3rafwyqlXBpLAhEEPykpNrulK3xsK4WbF0XwH8fE=";
-    hash = "sha256-TGFkD6UetmChI6XFD67IWu1hv8XZ3t3WTo8BYRKxvDg=";
+    hash = "sha256-DEg3rafwyqlXBpLAhEEPykpNrulK3xsK4WbF0XwH8fE=";
+    # hash = "sha256-TGFkD6UetmChI6XFD67IWu1hv8XZ3t3WTo8BYRKxvDg=";
     fetchSubmodules = true;
     # deepClone = true;
-    leaveDotGit = true;
+    # leaveDotGit = true;
   };
   # sudo apt-get install libtool automake libusb-1.0.0-dev texinfo libusb-dev libyaml-dev pkg-config
   nativeBuildInputs = [
@@ -59,6 +59,8 @@ stdenv.mkDerivation rec {
     "--enable-jtag_vpi"
     "--enable-dummy"
   ];
+
+  preferLocalBuild = true;
 
   meta = {
     description = "Spen's Official OpenOCD Mirror";
