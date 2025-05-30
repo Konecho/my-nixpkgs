@@ -22,11 +22,11 @@ stdenv.mkDerivation rec {
     owner = "SpinalHDL";
     repo = "openocd_riscv";
     rev = "a0220ad302589de0e9ed41344ccf5a87118cf54b";
-    hash = "sha256-q9T+O3l5P1seO3MgE1stVezO40t5z36IdWYfgo3bBhg=";
+    hash = "sha256-DEg3rafwyqlXBpLAhEEPykpNrulK3xsK4WbF0XwH8fE=";
     fetchSubmodules = true;
-    deepClone = true;
+    # deepClone = true;
+    leaveDotGit = true;
   };
-
   # sudo apt-get install libtool automake libusb-1.0.0-dev texinfo libusb-dev libyaml-dev pkg-config
   nativeBuildInputs = [
     # autoreconfHook
