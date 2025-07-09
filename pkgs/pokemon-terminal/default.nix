@@ -12,6 +12,8 @@ python3.pkgs.buildPythonApplication rec {
     rev = "refs/tags/v${version}";
     sha256 = "sha256-r2BfKh87LnkT3xL1qnJA8f88wB/gH4rr4ZlvYqiX/K8=";
   };
+  pyproject = true;
+  build-system = [python3.pkgs.setuptools];
   propagatedBuildInputs = with python3.pkgs; [
     psutil
     pytest
