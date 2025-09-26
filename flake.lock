@@ -18,28 +18,7 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
-        "tgt": "tgt"
-      }
-    },
-    "tgt": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1734941192,
-        "narHash": "sha256-35mhl9NsE2BeiK7dnxMAqb9K8lpN+l0fKe/gsifdFOU=",
-        "owner": "FedericoBruzzone",
-        "repo": "tgt",
-        "rev": "3eca3de17e241182ea688bdf024f3541ef21a7f9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "FedericoBruzzone",
-        "repo": "tgt",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

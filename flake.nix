@@ -2,8 +2,6 @@
   description = "My personal NUR repository";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    tgt.url = "github:FedericoBruzzone/tgt";
-    tgt.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs @ {
     self,
@@ -26,7 +24,6 @@
           inherit system;
           overlays = [
             (self: super: rec {
-              tgt = inputs.tgt.packages.${system}.default;
             })
           ];
         };
