@@ -21,7 +21,7 @@ in {
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  # kernel-cjktty = pkgs.callPackage ./pkgs/kernel-cjktty {};
+  kernel-cjktty = pkgs.callPackage ./pkgs/kernel-cjktty {};
   arttime = pkgs.callPackage ./pkgs/arttime {};
   # baru = pkgs.callPackage ./pkgs/baru {};
   bgmi = pkgs.callPackage ./pkgs/bgmi {};
