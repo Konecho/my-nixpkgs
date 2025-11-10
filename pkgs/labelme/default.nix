@@ -32,7 +32,7 @@ in
       pyyaml
       qtpy
       pyqt5
-      scikitimage
+      scikit-image
       termcolor
 
       imgviz
@@ -50,6 +50,7 @@ in
       homepage = "https://github.com/wkentaro/labelme";
       license = licenses.gpl3Only;
       # broken = true;
+      preferLocalBuild = true;
       maintainers = with maintainers; [];
     };
   }
