@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
     fetchSubmodules = true;
   };
 
-  nativeBuildInputs = [zig_0_11 wayland pkg-config];
+  nativeBuildInputs = [zig_0_13 wayland pkg-config];
   buildInputs = [
     wayland-protocols
     pulseaudio
