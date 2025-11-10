@@ -2,7 +2,7 @@
   lib,
   stdenv,
   fetchFromSourcehut,
-  zig_0_11,
+  zig_0_13,
   wayland,
   pkg-config,
   wayland-protocols,
