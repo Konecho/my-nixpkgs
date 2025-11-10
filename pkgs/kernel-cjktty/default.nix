@@ -32,7 +32,7 @@ in
       {
         name = "cjktty";
         patch = "${cjktty}/v6.x/cjktty-${{"6.8" = "6.7";}.${versionX_X} or versionX_X}.patch";
-        extraStructuredConfig = {
+        structuredExtraConfig = {
           FONT_CJK_16x16 = lib.kernel.yes;
           FONT_CJK_32x32 = lib.kernel.yes;
         };
