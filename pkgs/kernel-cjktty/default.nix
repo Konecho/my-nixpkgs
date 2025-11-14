@@ -27,8 +27,8 @@ in
     };
 
     kernelPatches = [
-      # kernelPatches.bridge_stp_helper
-      # kernelPatches.request_key_helper
+      kernelPatches.bridge_stp_helper
+      kernelPatches.request_key_helper
       {
         name = "cjktty";
         patch = "${cjktty}/v6.x/cjktty-${{"6.17" = "6.16";}.${versionX_X} or versionX_X}.patch";

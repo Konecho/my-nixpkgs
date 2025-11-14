@@ -46,4 +46,5 @@ in {
   tuigreet = pkgs.callPackage ./pkgs/tuigreet {};
   xdcmd = pkgs.callPackage ./pkgs/xdcmd {source = source.xdcmd;};
   openocd-riscv = pkgs.callPackage ./pkgs/openocd-riscv {};
+  pokewilds-bin = pkgs.callPackage ./pkgs/pokewilds-bin {};
 }
