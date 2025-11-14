@@ -29,5 +29,14 @@
         };
       });
     packages = forAllSystems (system: nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v) self.legacyPackages.${system});
+    overlays.defalut = import ./overlay.nix;
+    nixConfig = {
+      extra-substituters = [
+        "https://konecho.cachix.org"
+      ];
+      extra-trusted-public-keys = [
+        "konecho.cachix.org-1:WdZC2zag05oLTaBVQ9X8dI3dw5Lso7DqGRI92hTg+Mc="
+      ];
+    };
   };
 }
