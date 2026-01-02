@@ -47,4 +47,5 @@ in {
   xdcmd = pkgs.callPackage ./pkgs/xdcmd {source = source.xdcmd;};
   openocd-riscv = pkgs.callPackage ./pkgs/openocd-riscv {};
   pokewilds-bin = pkgs.callPackage ./pkgs/pokewilds-bin {};
+  uuplugin-bin = pkgs.callPackage ./pkgs/uuplugin-bin {sources = source;};
 }

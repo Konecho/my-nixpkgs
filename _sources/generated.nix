@@ -18,6 +18,22 @@
       };
     };
   };
+  uuplugin-aarch64 = {
+    pname = "uuplugin-aarch64";
+    version = "10.15.16";
+    src = fetchurl {
+      url = "https://uurouter.gdl.netease.com/uuplugin/openwrt-aarch64/v10.15.16/uu.tar.gz";
+      sha256 = "sha256-rUgBGGcu5JT/w/gwIDkZA+95ODYoG7etgarDnvPsLbc=";
+    };
+  };
+  uuplugin-x86_64 = {
+    pname = "uuplugin-x86_64";
+    version = "10.15.16";
+    src = fetchurl {
+      url = "https://uurouter.gdl.netease.com/uuplugin/openwrt-x86_64/v10.15.16/uu.tar.gz";
+      sha256 = "sha256-IVXOq5kOlUl1socbBWBcLDRrY7kHlgFx6iC5krFWCVk=";
+    };
+  };
   xdcmd = {
     pname = "xdcmd";
     version = "v1.0.0";
