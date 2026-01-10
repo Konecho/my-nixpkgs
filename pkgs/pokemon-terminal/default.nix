@@ -24,7 +24,7 @@ python3.pkgs.buildPythonApplication rec {
   '';
   meta = with lib; {
     description = "Pokemon terminal themes.";
-    homepage = https://github.com/LazoCoder/Pokemon-Terminal;
+    homepage = "https://github.com/LazoCoder/Pokemon-Terminal";
     changelog = "https://github.com/LazoCoder/Pokemon-Terminal/releases";
     license = licenses.gpl3;
     platforms = platforms.all;
