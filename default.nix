@@ -15,7 +15,7 @@
       dockerTools
       ;
   };
-in {
+in rec {
   # The `lib`, `modules`, and `overlay` names are special
   lib = import ./lib {inherit pkgs;}; # functions
   modules = import ./modules; # NixOS modules
@@ -47,4 +47,7 @@ in {
   openocd-riscv = pkgs.callPackage ./pkgs/openocd-riscv {};
   pokewilds-bin = pkgs.callPackage ./pkgs/pokewilds-bin {};
   uuplugin-bin = pkgs.callPackage ./pkgs/uuplugin-bin {sources = source;};
+  syllazh = pkgs.callPackage ./pkgs/syllazh {};
+  cengluan = pkgs.callPackage ./pkgs/cengluan {inherit bdflib;};
+  bdflib = pkgs.callPackage ./pkgs/python/bdflib {};
 }
