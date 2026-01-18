@@ -50,4 +50,5 @@ in rec {
   syllazh = pkgs.callPackage ./pkgs/syllazh {};
   cengluan = pkgs.callPackage ./pkgs/cengluan {inherit bdflib;};
   bdflib = pkgs.callPackage ./pkgs/python/bdflib {};
+  zmdcursor = pkgs.callPackage ./pkgs/zmdcursor {};
 }
