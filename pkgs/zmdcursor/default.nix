@@ -6,7 +6,7 @@
   fetchurl,
 }: let
   win2xcur_sh = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/Hello-lingu/win2xcur/refs/heads/main/win2xcur.sh";
+    url = "";
     sha256 = "sha256-NoAXonpGXjLybFUb0Sxey0PsMTvgmo0jeJq5CWC6fhA=";
   };
 in
@@ -38,5 +38,6 @@ in
       license = licenses.unlicense;
       platforms = platforms.all;
       maintainers = with maintainers; [offline];
+      broken = true;
     };
   }
