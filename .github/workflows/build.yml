@@ -41,7 +41,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-      - uses: wimpysworld/nothing-but-nix@v6
+      - uses: wimpysworld/nothing-but-nix@v9
         with:
           nix-permission-edict: true  # Default: false
       - name: Install nix
