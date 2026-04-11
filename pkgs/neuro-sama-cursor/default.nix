@@ -18,6 +18,6 @@ stdenvNoCC.mkDerivation {
     homepage = "https://store.kde.org/p/2163432";
     license = licenses.unlicense;
     platforms = platforms.all;
-    maintainers = with maintainers; [offline];
+    # maintainers = with maintainers; [offline];
   };
 }
