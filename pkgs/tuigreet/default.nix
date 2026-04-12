@@ -24,5 +24,6 @@ rustPlatform.buildRustPackage rec {
     license = lib.licenses.gpl3Plus;
     platforms = lib.platforms.linux;
     mainProgram = "tuigreet";
+    broken = true;
   };
 }
