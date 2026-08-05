@@ -41,7 +41,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-      - uses: wimpysworld/nothing-but-nix@v6
+      - uses: wimpysworld/nothing-but-nix@v10
         with:
           nix-permission-edict: true  # Default: false
       - name: Install nix
@@ -55,7 +55,7 @@ jobs:
       - name: Show nixpkgs version
         run: nix-instantiate --eval -E '(import <nixpkgs> {}).lib.version'
       - name: Setup cachix
-        uses: cachix/cachix-action@v16
+        uses: cachix/cachix-action@v17
         # Don't replace <YOUR_CACHIX_NAME> here!
         if: ${{ matrix.cachixName != '<YOUR_CACHIX_NAME>' }}
         with:
