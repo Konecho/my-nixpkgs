@@ -37,7 +37,7 @@ in rec {
   pokebase = pkgs.callPackage ./pkgs/python/pokebase {};
   pokemon-terminal = pkgs.callPackage ./pkgs/pokemon-terminal {};
   pokewilds = pkgs.callPackage ./pkgs/pokewilds {};
-  rime-ls = pkgs.callPackage ./pkgs/rime-ls {source = source.rime-ls;};
+  # rime-ls = pkgs.callPackage ./pkgs/rime-ls {source = source.rime-ls;};
   rust-demangler = pkgs.callPackage ./pkgs/python/rust-demangler {};
   shox = pkgs.callPackage ./pkgs/shox {};
   neuro-sama-cursor = pkgs.callPackage ./pkgs/neuro-sama-cursor {};
