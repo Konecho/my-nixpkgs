@@ -7,6 +7,10 @@ cargo_locks = ["Cargo.lock"]
 src.github = "TransparentLC/xdcmd"
 fetch.github = "TransparentLC/xdcmd"
 
+[project-babble]
+src.github = "Project-Babble/ProjectBabble"
+fetch.github = "Project-Babble/ProjectBabble"
+
 [uuplugin-x86_64]
 src.webpage = "https://router.uu.163.com/api/plugin?type=openwrt-x86_64"
 src.regex = 'openwrt-x86_64/v([^/]*)/'

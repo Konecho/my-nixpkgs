@@ -44,6 +44,7 @@ in rec {
   teranoptia = pkgs.callPackage ./pkgs/teranoptia {};
   tuigreet = pkgs.callPackage ./pkgs/tuigreet {};
   xdcmd = pkgs.callPackage ./pkgs/xdcmd {source = source.xdcmd;};
+  project-babble = pkgs.callPackage ./pkgs/project-babble {source = source.project-babble;};
   openocd-riscv = pkgs.callPackage ./pkgs/openocd-riscv {};
   pokewilds-bin = pkgs.callPackage ./pkgs/pokewilds-bin {};
   uuplugin-bin = pkgs.callPackage ./pkgs/uuplugin-bin {sources = source;};

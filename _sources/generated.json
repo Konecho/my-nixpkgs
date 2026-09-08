@@ -1,13 +1,27 @@
 {
-    "rime-ls": {
-        "cargoLocks": {
-            "Cargo.lock": [
-                "./rime-ls-v0.4.3/Cargo.lock",
-                {
-                    "librime-sys-0.1.0": "sha256-RSMiuG8Jqx7DJtpzcz5Vxlc1YA2VfuawLsgUwWxKk28="
-                }
-            ]
+    "project-babble": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "project-babble",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Project-Babble",
+            "repo": "ProjectBabble",
+            "rev": "v2.0.7",
+            "sha256": "sha256-5gKkQ1EU40v/p2wxdKyH5HSVYBOmsN3pGOToXSRMFNQ=",
+            "sparseCheckout": [],
+            "type": "github"
         },
+        "version": "v2.0.7"
+    },
+    "rime-ls": {
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "rime-ls",
@@ -28,7 +42,7 @@
         "version": "v0.4.3"
     },
     "uuplugin-aarch64": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "uuplugin-aarch64",
@@ -36,14 +50,14 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-rUgBGGcu5JT/w/gwIDkZA+95ODYoG7etgarDnvPsLbc=",
+            "sha256": "sha256-bbM8ANPJCmG59FYTKSlbTOvV9KSgm+2Uo9ZLhQymU9M=",
             "type": "url",
-            "url": "https://uurouter.gdl.netease.com/uuplugin/openwrt-aarch64/v10.15.16/uu.tar.gz"
+            "url": "https://uurouter.gdl.netease.com/uuplugin/openwrt-aarch64/v14.6.24/uu.tar.gz"
         },
-        "version": "10.15.16"
+        "version": "14.6.24"
     },
     "uuplugin-x86_64": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "uuplugin-x86_64",
@@ -51,14 +65,14 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-IVXOq5kOlUl1socbBWBcLDRrY7kHlgFx6iC5krFWCVk=",
+            "sha256": "sha256-oTVwMheTeaIdw40MD+baXDWWfIyFkguSTIIA0lMLhTM=",
             "type": "url",
-            "url": "https://uurouter.gdl.netease.com/uuplugin/openwrt-x86_64/v10.15.16/uu.tar.gz"
+            "url": "https://uurouter.gdl.netease.com/uuplugin/openwrt-x86_64/v14.6.22/uu.tar.gz"
         },
-        "version": "10.15.16"
+        "version": "14.6.22"
     },
     "xdcmd": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "xdcmd",
